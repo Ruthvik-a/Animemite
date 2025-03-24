@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime World</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Anime Stream</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <!-- Header -->
     <header>
-        <h1>Anime World</h1>
-        <nav>
-            <ul>
-                <li><a href="anime.html">Anime</a></li>
-                <li><a href="manga.html">Manga</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="fanart.html">Fan Art</a></li>
-                <li><a href="admin.html">Admin</a></li>
-            </ul>
-        </nav>
+        <h1>AnimeStream</h1>
     </header>
+    
+    <main>
+        <div class="video-container">
+            <video id="animePlayer" controls>
+                <source src="anime.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="controls">
+                <button id="rewind">⏪ 10s</button>
+                <select id="quality">
+                    <option value="1080p">1080p</option>
+                    <option value="720p">720p</option>
+                    <option value="480p">480p</option>
+                </select>
+                <button id="subtitles">Subtitles</button>
+                <button id="fullscreen">⛶ Fullscreen</button>
+                <button id="skip">⏩ 10s</button>
+            </div>
+        </div>
+    </main>
 
-    <!-- Homepage Content -->
-    <section class="home-content">
-        <h2>Welcome to Anime World</h2>
-        <p>Watch your favorite anime, read manga, and explore fan art.</p>
-    </section>
+    <nav class="bottom-nav">
+        <a href="#">Anime</a>
+        <a href="#">Manga</a>
+        <a href="#">Fan Art</a>
+        <a href="#">Store</a>
+        <a href="#">Admin</a>
+    </nav>
 
     <script src="script.js"></script>
 </body>
