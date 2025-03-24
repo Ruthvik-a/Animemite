@@ -1,24 +1,30 @@
-const player = document.getElementById("animePlayer");
+const video = document.getElementById("animePlayer");
+const rewindBtn = document.getElementById("rewind");
+const skipBtn = document.getElementById("skip");
+const qualitySelect = document.getElementById("quality");
+const subtitleBtn = document.getElementById("subtitles");
+const fullscreenBtn = document.getElementById("fullscreen");
 
-function skip(seconds) {
-    player.currentTime += seconds;
-}
+rewindBtn.addEventListener("click", () => {
+    video.currentTime -= 10;
+});
 
-function changeQuality() {
-    let quality = document.getElementById("qualitySelect").value;
-    player.src = quality;
-    player.play();
-}
+skipBtn.addEventListener("click", () => {
+    video.currentTime += 10;
+});
 
-function toggleSubtitles() {
-    let tracks = player.textTracks[0];
-    tracks.mode = tracks.mode === "showing" ? "hidden" : "showing";
-}
-
-function toggleFullScreen() {
+fullscreenBtn.addEventListener("click", () => {
     if (!document.fullscreenElement) {
-        player.requestFullscreen();
+        video.requestFullscreen();
     } else {
         document.exitFullscreen();
     }
-}
+});
+
+subtitleBtn.addEventListener("click", () => {
+    alert("Subtitles feature coming soon!");
+});
+
+qualitySelect.addEventListener("change", (event) => {
+    alert("Switching to " + event.target.value);
+});
