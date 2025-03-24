@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Streaming</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Anime Streaming</h1>
+    </header>
+
+    <div class="video-container">
+        <video id="animePlayer" controls>
+            <source src="videos/anime-episode.mp4" type="video/mp4">
+            <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English">
+        </video>
+
+        <div class="video-controls">
+            <button onclick="skip(-10)">Rewind 10s</button>
+            <select id="qualitySelect" onchange="changeQuality()">
+                <option value="videos/anime-1080p.mp4">1080p</option>
+                <option value="videos/anime-720p.mp4">720p</option>
+                <option value="videos/anime-480p.mp4">480p</option>
+            </select>
+            <button onclick="toggleSubtitles()">Subtitles</button>
+            <button onclick="toggleFullScreen()">Fullscreen</button>
+            <button onclick="skip(10)">Skip 10s</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
